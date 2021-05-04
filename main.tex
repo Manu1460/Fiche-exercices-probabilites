@@ -1,0 +1,455 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{qrcode}
+\usepackage{lmodern}
+\usepackage{colortbl}%permet de griser les cases
+\usepackage{tabularx, multirow}
+%\usepackage{lscape}
+\usepackage{xcolor}
+%\usepackage{graphicx}
+\usepackage{tikz,tkz-base}
+\input{preambulemanu.sty}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\def\Oij{$\left(\text{O},~\vec{i},~\vec{j}\right)$}
+\usepackage{fancyhdr}
+\usepackage{MnSymbol,wasysym}
+
+%Permet le code python sur lateX
+\usepackage{minted}
+\usemintedstyle{lovelace}
+
+
+
+\begin{document}
+\textbf{2nd} \hfill \textbf{Les probabilités} \hfill Lycée Jean Rostand\\
+\trait 
+
+\section{Loi de probabilité}
+\subsection*{Exercice n°1}
+
+Je dispose d'un dé spécial, une face est marquée d'un 1, deux faces sont marquées d'un 2 et trois faces sont marquées d'un 3.
+
+\begin{enumerate}
+    \item Je jette le dé. Donner l'univers de l'expérience
+    \item Je jette deux dés de ce type et je note la somme des points qui apparaissent. Donner l'univers de cette nouvelle expérience.
+\end{enumerate}
+
+\subsection*{Exercice n°2}
+
+On lance deux dés tétraédriques bien équilibrés dont les faces sont numérotés de 1 à 4. On note les deux nombre obtenus. Déterminer les univers de chacun des expériences aléatoires suivantes: 
+
+
+\begin{enumerate}
+    \item On effectue la différence du plus grand nombre par le plus petit nombre.
+    \item On effectue la somme des deux nombres obtenus.
+    \item On effectue le produit des deux nombres obtenus
+\end{enumerate}
+
+
+\subsection*{Exercice n°3}
+
+
+Une urne contient $10$ jetons numérotés de 1 à 10.
+
+On choisit au hasard une jeton de l'urne et on note le nombre obtenu.
+
+\begin{enumerate}
+    \item Déterminer l'événement $A$: \og Le nombre tiré est pair \fg{}.
+    \item Déterminer l'événement $B$: \og Le nombre tiré est multiple de 3 \fg{}.
+    \item Déterminer l'événement $B$: \og Le nombre tiré est multiple de 5 \fg{}.
+\end{enumerate}
+
+\subsection*{Exercice n°4}
+
+\begin{enumerate}
+    \item On choisit au hasard une carte dans un jeu de 32 cartes.
+    \begin{enumerate}
+        \item Déterminer l'événement $R$: \og On obtient un roi \fg{}.
+        \item Déterminer l'événement $C$: \og On obtient un carreau \fg{}.
+    \end{enumerate}
+    \item On choisit au hasard une carte dans un jeu de 52 cartes. Reprendre les questions précédentes.
+\end{enumerate}
+
+\section{Probabilité d'un événement}
+
+\subsection*{Exercice n°5}
+
+Un dé a été truqué de façon à ce que la probabilité de sortie 6 soit le double de la probabilité de sortie du 1 et la probabilité de sortie du 4 soit le triple de la probabilité de sortie du 1.\\
+De plus, les numéros 1,2,3 et 5 ont la même probabilité de sortie.
+
+\begin{enumerate}
+    \item Calculer la probabilité de sortie de chaque numéro.\\ \textit{On notera P(1) , P(2) ... les probabilités de sortie du 1 , du 2 ...}
+    \item Calculer la probabilité de l'événement A:\og Obtenir un numéro pair\fg{}.
+\end{enumerate}
+
+\subsection*{Exercice n°6} 
+Un dé est truqué tel que $P(1)=0,1$; $P(2)=0,2$;$P(3)=0,3$;$P(4)=0$ et $P(5)=P(6)$
+\begin{enumerate}
+    \item Calculer $P(5)$
+    \item Calculer la probabilité d'obtenir un nombre pair
+\end{enumerate}
+
+\subsection*{Exercice n°7} 
+
+On considère un dé truqué à 6 faces. L'expérience aléatoire consiste à lancer le dé et à considérer la valeur de la face supérieure du dé.\\
+Pour $k$ un entier compris entre 1 et 6, on considère l'événement $F_k$ défini par \og la valeur obtenue est $k$ \fg{} \\
+Pour seules informations sur le dé, on a:
+
+\begin{itemize}
+    \item Le tableau incomplet de la loi de probabilité de cette expérience aléatoire:
+
+
+\begin{center}
+ { \setlength{\tabcolsep}{8mm}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+ $X$& $F_1$ &$F_2$& $F_3$&$F_4$&$F_5$&$F_6$\\ \hline
+
+$P(X)$& $0,11$& $0,07$& &$0,2$ &$0,15$ &\\ \hline
+
+\end{tabular} }
+   
+\end{center}
+\item La probabilité d'obtenir un nombre pair vaut $0,4$
+\end{itemize}
+
+Compléter le tableau de la loi de probabilité de cette expérience aléatoire.
+
+\subsection*{Exercice n°8} 
+
+Dans une boîte, il y a un quart de jetons blancs, un tiers de jetons noirs et le reste de jetons rouges. On tire au hasard un jeton. Déterminer la probabilité des événements suivants:
+
+\begin{enumerate}
+    \item $A$:\og Le jeton est blanc \fg{}
+    \item $B$: \og Le jeton n'est pas rouge \fg{}
+    \item $C$: \og Le est rouge ou le jeton est noir \fg{}
+\end{enumerate}
+
+\subsection*{Exercice n°9} 
+
+On prend une carte au hasard dans un jeu de 32 cartes. \\
+Quelle est la probabilité d'obtenir:\\
+
+\compo{
+\begin{itemize}
+
+    \item $p_1$:le valet de trèfle ?
+    \item $p_2$:un valet ?
+    \item $p_3$:un figure ?
+    \item $p_4$:un coeur?
+\end{itemize}}{\begin{itemize}
+    \item $p_5$:une figure ou un pique ?
+    \item $p_6$:une figure qui soit un carreau ?
+    \item $p_7$:une dame rouge ?
+    \item $p_8$:un trois?
+\end{itemize}}
+
+\subsection*{Exercice n°10} 
+Un univers associé à une expérience aléatoir est constitué de trois issues.
+La loi de probabilité vérifie $p(A)=t^2$, $p(B)=t$ et $p(C)=\dfrac{1}{4}$.\\
+Déterminer $t$.
+
+\section{Représentations}
+
+\subsection*{Exercice n°11}
+Un groupe de 800 personnes comprend $40$\% de fumeurs.\\
+$17$\% des personnes sont atteintes d'un maladie cardio-vasculaire et parmi elle, il y a $102$ fumeurs.
+
+\begin{enumerate}
+    \item Compléter le tableau ci-dessous représentant la situation:
+    \begin{center}
+  
+
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|p{2.5cm}|} \hline
+ & Personnes atteintes d'une maladie cardio-vasculaire &Personnes non atteintes d'une maladie cardio-vasculaire& Total \\ \hline
+Fumeurs &  & & \\ \hline
+ Non Fumeurs & & & \\ \hline
+Total & & & \\ \hline
+\end{tabular} 
+   
+\end{center}
+    
+    
+    \item Quelle est la proportion de fumeurs parmi les personnes malades ?
+    \item Quelle est la proportion de malades parmi les fumeurs ?
+\end{enumerate}
+
+\subsection*{Exercice n°12}
+
+Le tableau ci-dessous indique la répartition dans un laboratoire d’un élevage de souris:
+\begin{center}
+    
+
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|p{2.5cm}|} \hline
+&Blanche  &Grise & Total \\ \hline
+Mâles &30  &7 & 37\\ \hline
+ Femelles & 55 & 8 & 63 \\ \hline
+Total &85 &15 &100 \\ \hline
+\end{tabular} 
+\end{center}
+
+
+
+\begin{enumerate}
+    \item On prend une souris parfaitement au hasard pour une expérience. Déterminer la probabilité des événements suivants:
+    \begin{enumerate}
+        
+    \item A:\og la souris est blanche \fg
+    \item B:\og la souris est blanche ou femelle \fg
+    \item C:\og la souris est grise et c’est un mâle \fg
+    \end{enumerate}
+    \item On prend une souris blanche. Quelle est la probabilité que ce soit une femelle?
+\end{enumerate}
+
+\subsection*{Exercice n°13}
+
+Un petit collège de $469$ élèves ne propose que deux activités périscolaires:  un club théâtre et un atelier d’initiation à la programmation.\\
+On sait que: $56$ élèves sont inscrits au club théâtre, $79$ sont inscrits au club informatique et $14$ élèves font les deux.\\
+On choisit au hasard un élève dans l’établissement et on considère les deux événements suivants: 
+
+\begin{itemize}
+    \item T:\og l’élève est inscrit au club théâtre \fg
+    \item I:\og l’élève est inscrit à l'atelier informatique \fg
+\end{itemize}
+
+
+\begin{enumerate}
+    \item Résumer la situation grâce à une représentation bien choisie.
+    \item Grâce au langage ensembliste, comment peut-on décrire l’ensemble des élèves qui ne pratiquent aucune activité périscolaire? 
+    \item Déterminer la probabilité de choisir un élève qui ne pratique aucune activité périscolaire.
+\end{enumerate}
+
+\subsection*{Exercice n°14}
+
+\begin{enumerate}
+    \item On s’intéresse à une pièce de monnaie bien équilibrée.Lorsqu’on la lance, on a donc autant de chance d’obtenir Pileque Face.Quelle est la probabilité d’obtenir Pile? d’obtenir Face?
+    \item On lance cette pièce trois fois de suite.
+    \begin{enumerate}
+        \item Déterminer les différentes issues possibles (on pourra s’aider d’un arbre).
+        \item Quel est le nombre d’issues possible?
+        \item Combien de fois n’a-t-on que des Piles? Donner la probabilité d’obtenir trois Piles de suite.
+        \item Dans combien de cas obtient-on deux Piles exactement? Donner la probabilité d’obtenir deux Piles exactement.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Exercice n°15}
+
+\compo[0.6]{
+La figure ci-contre représente un tétraèdre régulier ainsi qu'un scarabée se déplaçant le long de des arêtes du tétraèdre suivant les règles ci-après:
+\begin{itemize}
+    \item Pour parcourir une arête, il faut une minute;
+    \item A chaque somme, il choisit au hasard l'une des trois arêtes;
+    \item Le scarabée part du sommet A.
+\end{itemize}
+}{\includegraphics[scale=0.6]{insecte.png}}
+
+A l'aide d'un arbre, calculer les probabilités des événements suivants:
+
+\begin{enumerate}
+    \item Le scarabée est en A au bout de trois minutes
+    \item Durant les trois premières minutes, le scarabée ne passe jamais au sommet C.
+\end{enumerate}
+
+\subsection*{Exercice n°16}
+
+Un commerçant doit livre quatre clients A, B,C et D. On appelle trajet la succession des quatre livraisons.\\
+Quel est le nombre de trajets :
+
+\begin{enumerate}
+    \item Au total ?
+    \item Commençant par le client A ?
+    \item Si le commerçant doit livrer A avant B et C ?
+\end{enumerate}
+
+\subsection*{Exercice n°17}
+
+Une urne contient 3 jetons: un bleu, un blanc et un rouge.\\
+On choisit un jeton, on note sa couleur et on le remet dans l'urne; on choisit un deuxième jeton et on note à nouveau sa couleur.\\
+On représente un tirage par un couple dont le premier élément est le premier jeton choisi et le second élément, le deuxième jeton choisi.\\
+
+\begin{enumerate}
+    \item Déterminer, à l'aide d'un arbre, l'ensemble de tous les tirages possibles.
+    \item Quelle est la probabilité de ne piocher aucune jeton blanc ?
+    \item Quelle est la probabilité de piocher au moins un jeton blanc ?
+    \item Quelle est la probabilité de piocher deux jetons de même couleur ?
+\end{enumerate}
+
+\newpage
+\subsection*{Exercice n°18}
+En se baladant dans les hautes herbes de la région d'Alola, Sacha réalise qu'il rencontre toujours les quatres même Pokémons:
+
+\begin{center}
+    \includegraphics[scale=0.5]{pokemon.png}
+\end{center}
+
+Certains Pokémons sont cependant rencontrés plus souvent que les autres.\\
+Le professeur Euphorbe affirme que:
+\begin{itemize}
+    \item 20\% des Pokémons rencontrés sur Alola sont de type normal
+    \item 50\% des  Pokémons rencontrés sur Alola sont de type eau
+    \item 60\% des Pokémons rencontrés sur Alola sont de type insecte
+\end{itemize}
+
+Posons I:\og Rencontrer un Pokémon de type insecte \fg et E:\og Rencontrer un Pokémon de type eau \fg{}
+
+\begin{enumerate}
+    \item Associer les événements $I\cap E$, $I \inter \bar{E}$, $\bar{I}\inter E$ et $\bar{I}\inter \bar{E}$ à leurs Pokémons respectifs.
+    \item Compléter le tableau suivant et en déduire la probabilité d'apparition de chaque Pokémon.
+\begin{center}
+
+
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|p{2.5cm}|} \hline
+ & $I$ &$\bar{I}$& Total \\ \hline
+$E$&  & & \\ \hline
+ $\bar{E}$ & & & \\ \hline
+Total & & & 100\\ \hline
+\end{tabular} 
+   
+\end{center}
+\end{enumerate}
+
+\subsection*{Exercice n°19}
+
+Un cabinet de recrutement fait passer à des candidats deux examens, l'un est en mathématiques et l'autre en français. L'examen permet de déterminer si le candidat a un niveau satisfaisant ou non dans la matière sur lequel il porte.\\
+On dispose des informations suivantes:
+\begin{itemize}
+    \item 80\% des candidats n'ont pas un niveau satisfaisant en mathématiques;
+    \item Les candidats qui ont un niveau satisfaisant en français sont trois fois plus nombreux que ceux qui n'ont pas un niveau satisfaisant en français;
+    \item Parmi les candidats dont le niveau en mathématiques est satisfaisant, 50\% ont un niveau satisfaisant en français.
+\end{itemize}
+On interroge un candidat au hasard et s'intéresse à son niveau en mathématiques et en français.\\
+On considère les événements:
+
+\begin{itemize}
+    \item M: \og Le candidat a un niveau satisfaisant en mathématiques \fg
+    \item F: \og Le candidat a un niveau satisfaisant en français \fg
+\end{itemize}
+
+\begin{enumerate}
+    \item Compléter le tableau ci-dessous
+    
+    \begin{center}
+
+
+\begin{tabular}{|p{2.5cm}|p{4cm}|p{4cm}|p{2.5cm}|} \hline
+ & $M$ &$\bar{M}$& Total \\ \hline
+$F$&  & & \\ \hline
+ $\bar{F}$ & & & \\ \hline
+Total & & & 100\\ \hline
+\end{tabular} 
+   
+\end{center}
+
+\item Déterminer la probabilité des événements:
+\begin{enumerate}
+    \item $\bar{F}$
+    \item $\bar{M}$
+    \item $\bar{F} \inter \bar{M}$
+    \item $\bar{F} \union \bar{M}$
+    \item $F \union M$
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Exercice n°20}
+
+Soit l'ensemble $\Omega$ constitué des nombres entiers de 1 à 20 inclus. On choisit au hasard un de ces nombres.\\
+On considère les quatre événements suivants:
+
+\begin{itemize}
+    \item A:\og Le nombre est multiple de 2 \fg{}
+    \item B:\og Le nombre est multiple de 4 \fg{}
+    \item C:\og Le nombre est multiple de 5 \fg{}
+    \item D:\og Le nombre est multiple de 4 mais pas de 2\fg{}
+\end{itemize}
+
+\begin{enumerate}
+    \item Donner la liste des éléments de $\Omega$.
+    \item Lors d'un tirage, l'événement $A$ peut être réalisé pour 10 nombres différents, lesquels ?
+    \item L'événement $D$ peut-il être réalisé ?
+    \item Décrire en une phrase les éléments de $A\inter C$. Quels tirages sont favorables à $A\inter C$ ?
+    \item Mêmes questions pour les événements $B\inter C$ et $\bar{A}\inter \bar{C}$
+\end{enumerate}
+
+\subsection*{Exercice n°21}
+
+Chaque lettre du mot \og LIONS \fg est écrite sur un carton et ces cartons sont placés dans un sac. On choisit un carton au hasard, puis, sans le remettre dans le sac, on choisit un second carton placé à droite du premier.\\
+On forme ainsi des \og mots \fg de deux lettres
+
+\begin{enumerate}
+    \item A l'aide d'un arbre, donner les éléments de l'ensemble $\Omega$ de tous les mots que l'on peut ainsi former. Quel est le nombre des éléments de $\Omega$
+    \item On considère les événements suivants :
+    \begin{itemize}
+        \item A:\og Le mot de deux lettres comporte deux voyelles \fg
+        \item B:\og Le mot de deux lettres commence par I \fg
+        \item  C:\og Le mot de deux lettres se termine par S \fg
+    \end{itemize}
+    Décrire en une phrase l'événement $B\inter C$, puis l'événement $A\inter B$ puis $A\union B$
+    \item Calculer la probabilité de chacun des événements $A$,$B$,$C$ ,$\bar{A}$, $A\inter B$ et $A\union B$
+    \item Retrouver la valeur $p(A\union B)$ par le calcul 
+\end{enumerate}
+
+\section{Pour aller plus loin}
+
+\subsection*{Exercice n°22}
+
+Dans une classe de 2nd les langues suivantes sont étudiées: anglais, allemand et espagnol.
+Chaque élève étudie au moins une langue et:
+
+\compo{
+\begin{itemize}
+
+    \item 5 élèves étudient les trois langues
+    \item 8 élèves étudient l'anglais et l'espagnol
+    \item 20 élèves étudient l'anglais
+    \item 15 élèves étudient l'allemand
+\end{itemize}}{\begin{itemize}
+    \item 18 élèves étudient l'espagnol
+    \item 7 élèves étudient l'anglais et l'allemand
+    \item 9 élèves étudient l'allemand et l'espagnol
+\end{itemize}}
+
+
+\begin{center}
+\begin{tikzpicture}
+
+\draw(2,0) ellipse (3 and 2);
+\draw(-2,0) ellipse (3 and 2);
+\draw(0,-2) ellipse (3 and 2);
+\draw(-3,0) node{Groupe anglais};
+\draw(3,0) node{Groupe espagnol};
+\draw(0,-3) node{Groupe allemand};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Exercice n°23}
+
+Lors d'une enquête à la sortie du lycée, on a interrogé $60$ élèves. Durant la semaine précédent l'enquête, $35$ avaient lu un livre, $30$ étaient allés au cinéma et, parmi ces derniers, $10$ avaient lu un livre. On interroge un de ces élèves. Déterminer, à l'aide d'un tableau à double entrée, la probabilité des événements suivants ( donner les résultats en fractions):
+
+\begin{itemize}
+    \item A: \og Interroger un élève ayant lu un livre\fg
+    \item B: \og Interroger un élève qui est allé au cinéma \fg{}
+    \item C:\og Interroger un élève ayant lu un livre, mais qui n'est pas allé au cinéma
+    \item D: \og Interroger un élève n'ayant ni lu un livre ni vu un film \fg
+\end{itemize}
+
+\subsection*{Exercice n°24}
+
+Une entreprise piscicole gère deux bassins.\\
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
